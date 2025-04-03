@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
 
+        .traffic-light {
+            width: 80px;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+
+        .red { background-color: red; }
+        .yellow { background-color: yellow; }
+        .green { background-color: green; }
+    </style>
+</head>
+<body>
+
+<div class="traffic-light">
+    <div id="red" class="light red"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+</div>
+
+<script>
+   
+    setTimeout(() => {
+        document.getElementById("red").classList.remove("red");
+        document.getElementById("green").classList.add("green");
+    }, 6000);
+
+   
+    setTimeout(() => {
+        document.getElementById("green").classList.remove("green");
+        document.getElementById("yellow").classList.add("yellow");
+    }, 12000);
+
+    
+    setTimeout(() => {
+        document.getElementById("yellow").classList.remove("yellow");
+        document.getElementById("red").classList.add("red");
+    }, 15000);
+</script>
+
+</body>
+</html>
